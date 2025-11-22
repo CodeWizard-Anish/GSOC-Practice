@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Reverse</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(104, 104, 152);
+        }
+        button:hover {
+            background-color: darkblue;
+            color: white;
+        }
+    </style>
+    <h1>Input Words Reverser</h1>
+    <input type="text"  id="words" placeholder="Enter words here">
+    <button id="reverse">Reverse</button>
+
+    <script>
+        document.getElementById("reverse").addEventListener("click", function() {
+            const input = document.getElementById("words").value;
+            const wordsArray = input.split(" "); //toLowerCase().
+            const reversedWords = wordsArray.map(word => word.split("").reverse().join(""));
+            const result = reversedWords.join(" ");
+            document.getElementById("words").value = result;
+        });
+    </script>
+</body>
+</html>
