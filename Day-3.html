@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter App</title>
+</head>
+<body>
+    <h1>Character Counter App</h1>
+    <input type="text" id="inputText" placeholder="Type something here..." style="width: 300px; padding: 10px; font-size: 16px;">
+    <button id="countButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: rgb(104, 104, 152); margin-left: 10px;">Count Characters</button>
+    <p id="result" style="margin-top: 20px; font-size: 18px;"></p>
+    <script>
+        document.getElementById("countButton").addEventListener("click", function() {
+            const inputText = document.getElementById("inputText").value;
+            const removeSpace = inputText.split(" ").join("");
+            const charCount = removeSpace.length;
+            document.getElementById("result").innerText = `Character Count: ${charCount}`;
+        });
+    </script>
+</body>
+</html>
